@@ -26,5 +26,6 @@ public class ControlBall : MonoBehaviour
     {
         transform.Translate(direction.normalized*speed*Time.deltaTime);
         speed += acceleration * Time.deltaTime;
+        transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, (Mathf.Sign(direction.x)-1)*90 + Mathf.Atan(direction.y/direction.x)*180/Mathf.PI);
     }
 }
