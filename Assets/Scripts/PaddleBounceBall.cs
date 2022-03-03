@@ -16,10 +16,10 @@ public class PaddleBounceBall : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.Equals(ball)) {
-            // ball.GetComponent<Move>().direction = 
+            ball.GetComponent<ControlBall>().direction = (ball.transform.position - transform.position).normalized;
         }
     }
 }

@@ -28,7 +28,7 @@ public class PaddleMovement : MonoBehaviour
         Vector3 localMouse = paddleTransform.worldToLocalMatrix * mouse;
         Vector3 paddle = paddleTransform.worldToLocalMatrix * paddleTransform.position;
         Vector3 diff = localMouse-paddle;
-        Debug.Log("Mouse: " + localMouse.ToString() + "\nPaddle: " + paddle.ToString() + "\nDiff: " + diff.ToString());
+        // Debug.Log("Mouse: " + localMouse.ToString() + "\nPaddle: " + paddle.ToString() + "\nDiff: " + diff.ToString());
         paddleTransform.Translate(new Vector3(diff.x, 0, 0));
     }
 }
