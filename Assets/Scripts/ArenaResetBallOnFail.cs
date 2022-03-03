@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArenaResetBallOnFail : MonoBehaviour
 {
     public GameObject ball;
+    public GameObject score;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +20,9 @@ public class ArenaResetBallOnFail : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log(other.ToString());
         if (other.gameObject.Equals(ball)) {
             ball.GetComponent<ControlBall>().Reset();
+            score.GetComponent<UnityEngine.UI.Text>().text = "0";
         }
     }
 }
