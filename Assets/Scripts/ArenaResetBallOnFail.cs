@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PaddleBounceBall : MonoBehaviour
+public class ArenaResetBallOnFail : MonoBehaviour
 {
     public GameObject ball;
     // Start is called before the first frame update
@@ -16,10 +16,12 @@ public class PaddleBounceBall : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log(other.ToString());
         if (other.gameObject.Equals(ball)) {
-            ball.GetComponent<ControlBall>().direction = (ball.transform.position - transform.position).normalized;
+            ball.GetComponent<ControlBall>().Reset();
         }
     }
 }
