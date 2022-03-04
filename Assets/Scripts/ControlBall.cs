@@ -11,10 +11,10 @@ public class ControlBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Reset();
+        InitializeBall();
     }
 
-    public void Reset() {
+    public void InitializeBall() {
         speed = startingSpeed;
         transform.position = new Vector2();
         float angle = Random.Range(0, 2*Mathf.PI);

@@ -21,7 +21,7 @@ public class ArenaResetBallOnFail : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.Equals(ball)) {
-            ball.GetComponent<ControlBall>().Reset();
+            ball.GetComponent<ControlBall>().InitializeBall();
             score.GetComponent<UnityEngine.UI.Text>().text = "0";
         }
     }
