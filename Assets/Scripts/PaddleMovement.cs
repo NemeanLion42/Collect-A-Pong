@@ -21,6 +21,7 @@ public class PaddleMovement : MonoBehaviour
         // GoToMouse();
     }
 
+    float paddleLimit = 2.75f;
     void GoToMouse()
     {
         Transform paddleTransform = transform.GetChild(0);
@@ -28,7 +29,11 @@ public class PaddleMovement : MonoBehaviour
         Vector3 localMouse = paddleTransform.worldToLocalMatrix * mouse;
         Vector3 paddle = paddleTransform.worldToLocalMatrix * paddleTransform.position;
         Vector3 diff = localMouse-paddle;
-        // Debug.Log("Mouse: " + localMouse.ToString() + "\nPaddle: " + paddle.ToString() + "\nDiff: " + diff.ToString());
         paddleTransform.Translate(new Vector3(diff.x, 0, 0));
+        Debug.Log("Mouse: " + localMouse.ToString() + "\nPaddle: " + paddle.ToString() + "\nDiff: " + diff.ToString());
+        paddle = paddleTransform.worldToLocalMatrix * paddleTransform.position;
+        paddle.x = Mathf.Min(Mathf.Max(paddle.x, -paddleLimit), paddleLimit);
+        paddleTransform.position = paddleTransform.localToWorldMatrix * paddle;
+        // paddleTransform.position = new Vector2(Mathf.Min(Mathf.Max(paddleTransform.position.x, -5.5f), 5.5f), 0);
     }
 }
