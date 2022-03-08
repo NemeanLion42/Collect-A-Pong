@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControlBall : MonoBehaviour
 {
     public Vector2 direction;
-    private float startingSpeed = 2;
+    private float startingSpeed = 2.5f;
     public float speed;
     public float acceleration = 0.05f;
     // Start is called before the first frame update

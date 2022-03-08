@@ -23,7 +23,11 @@ public class ControlCoin : MonoBehaviour
     }
 
     void InitializeCoin() {
-        transform.position = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
+        Vector3 newPosition = transform.position;
+        while ((transform.position-newPosition).magnitude < 1) {
+            transform.position = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
+        }
+        gameObject.GetComponent<SpriteRenderer>().material.color = Color.HSVToRGB(Random.Range(0.12f, 0.16f), Random.Range(0.8f, 0.95f), Random.Range(0.9f, 0.95f));
     }
 
     void OnTriggerEnter2D(Collider2D other)
