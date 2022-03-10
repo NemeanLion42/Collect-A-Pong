@@ -6,7 +6,6 @@ public class ArenaResetBallOnFail : MonoBehaviour
 {
     public GameObject ball;
     public GameObject score;
-    public GameObject time;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +22,7 @@ public class ArenaResetBallOnFail : MonoBehaviour
     {
         if (other.gameObject.Equals(ball)) {
             ball.GetComponent<ControlBall>().InitializeBall();
-            score.GetComponent<UnityEngine.UI.Text>().text = "0";
-            time.GetComponent<TrackTime>().time = 0;
+            score.GetComponent<TrackScore>().score = 0;
         }
     }
 }

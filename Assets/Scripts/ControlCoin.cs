@@ -33,7 +33,8 @@ public class ControlCoin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.Equals(ball)) {
-            score.GetComponent<UnityEngine.UI.Text>().text = (int.Parse(score.GetComponent<UnityEngine.UI.Text>().text) + 1).ToString();
+            TrackScore tracker = score.GetComponent<TrackScore>();
+            tracker.score += tracker.pointsPerSecond*tracker.secondsPerCoin;
             InitializeCoin();
         }
     }
