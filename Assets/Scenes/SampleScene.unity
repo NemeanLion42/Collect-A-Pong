@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b351dd2ae17f1e0499ebd025d0d62055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
 --- !u!114 &195039087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 256032849}
   score: {fileID: 523320861}
+  time: {fileID: 195039084}
 --- !u!1 &452501805
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,9 +966,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 256032849}
   score: {fileID: 523320861}
-  hue: 0
-  saturation: 0
-  value: 0
 --- !u!58 &987365024
 CircleCollider2D:
   m_ObjectHideFlags: 0
