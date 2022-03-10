@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrackTime : MonoBehaviour
 {
-    float time = 0;
+    public float time = 0;
     // Start is called before the first frame update
     void Start()
     {
