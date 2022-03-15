@@ -7,6 +7,8 @@ public class TrackScore : MonoBehaviour
     public float score = 0;
     public int pointsPerSecond = 100;
     public int secondsPerCoin = 5;
+    public float highScore = 0;
+    public GameObject highScoreObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,10 @@ public class TrackScore : MonoBehaviour
     void Update()
     {
         score += Time.deltaTime*pointsPerSecond;
-        gameObject.GetComponent<UnityEngine.UI.Text>().text = Mathf.Round(score).ToString()/* + "." + (Mathf.Round(score*100) % 100).ToString().PadLeft(2, '0')*/;
+        gameObject.GetComponent<UnityEngine.UI.Text>().text = Mathf.Round(score).ToString();
+        if (score > highScore) {
+            highScore = score;
+            highScoreObject.GetComponent<UnityEngine.UI.Text>().text = Mathf.Round(highScore).ToString();
+        }
     }
 }
