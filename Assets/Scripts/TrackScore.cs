@@ -23,7 +23,7 @@ public class TrackScore : MonoBehaviour
         gameObject.GetComponent<UnityEngine.UI.Text>().text = Mathf.Round(score).ToString();
         if (score > highScore[ball.difficulty]) {
             highScore[ball.difficulty] = score;
-            highScoreObject.GetComponent<UnityEngine.UI.Text>().text = Mathf.Round(highScore[ball.difficulty]).ToString();
         }
+        highScoreObject.GetComponent<UnityEngine.UI.Text>().text = Mathf.Round(highScore[ball.difficulty]).ToString();
     }
 }
