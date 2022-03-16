@@ -20,10 +20,10 @@ public class TrackScore : MonoBehaviour
     void Update()
     {
         score += Time.deltaTime*pointsPerSecond;
-        gameObject.GetComponent<UnityEngine.UI.Text>().text = "Score: " + Mathf.Round(score).ToString();
+        gameObject.GetComponent<TMPro.TMP_Text>().text = "Score: " + Mathf.Round(score).ToString();
         if (score > highScore[ball.difficulty]) {
             highScore[ball.difficulty] = score;
         }
-        highScoreObject.GetComponent<UnityEngine.UI.Text>().text = "High Score: " + Mathf.Round(highScore[ball.difficulty]).ToString();
+        highScoreObject.GetComponent<TMPro.TMP_Text>().text = "High Score: " + Mathf.Round(highScore[ball.difficulty]).ToString();
     }
 }

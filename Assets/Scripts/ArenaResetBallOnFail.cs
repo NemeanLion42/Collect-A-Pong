@@ -6,6 +6,7 @@ public class ArenaResetBallOnFail : MonoBehaviour
 {
     public GameObject ball;
     public GameObject score;
+    public GameObject particles;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,8 @@ public class ArenaResetBallOnFail : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.Equals(ball)) {
+            particles.transform.position = ball.transform.position;
+            particles.GetComponent<ParticleSystem>().Play();
             ball.GetComponent<ControlBall>().InitializeBall();
             score.GetComponent<TrackScore>().score = 0;
         }
