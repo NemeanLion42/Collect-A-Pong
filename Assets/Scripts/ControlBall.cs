@@ -12,12 +12,12 @@ public class ControlBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startingSpeed = new float[] {2.5f, 4f, 6f};
-        acceleration = new float[] {0.025f, 0.05f, 0.1f};
         InitializeBall();
     }
 
     public void InitializeBall() {
+        startingSpeed = new float[] {2.5f, 4f, 6f};
+        acceleration = new float[] {0.025f, 0.05f, 0.1f};
         speed = startingSpeed[difficulty];
         transform.position = new Vector2();
         float angle = Random.Range(0, 2*Mathf.PI);

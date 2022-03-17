@@ -6,6 +6,7 @@ public class ControlCoin : MonoBehaviour
 {
     public GameObject ball;
     public GameObject score;
+    public GameObject particles;
     float size = 0.4f;
     float angle = 0;
     float rotationSpeed = Mathf.PI;
@@ -33,6 +34,8 @@ public class ControlCoin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.Equals(ball)) {
+            particles.transform.position = transform.position;
+            particles.GetComponent<ParticleSystem>().Play();
             TrackScore tracker = score.GetComponent<TrackScore>();
             tracker.score += tracker.pointsPerSecond*tracker.secondsPerCoin;
             InitializeCoin();

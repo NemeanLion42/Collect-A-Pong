@@ -21,7 +21,6 @@ public class ScreenController : MonoBehaviour
     }
 
     public void ShowMenu() {
-        background.GetComponent<SpriteRenderer>().color = Color.gray;
         menu.SetActive(true);
         game.SetActive(false);
         instructions.SetActive(false);
@@ -29,7 +28,6 @@ public class ScreenController : MonoBehaviour
     }
 
     public void StartEasy() {
-        background.GetComponent<SpriteRenderer>().color = Color.white;
         menu.SetActive(false);
         ball.difficulty = 0;
         game.SetActive(true);
@@ -37,7 +35,6 @@ public class ScreenController : MonoBehaviour
     }
 
     public void StartMedium() {
-        background.GetComponent<SpriteRenderer>().color = Color.white;
         menu.SetActive(false);
         ball.difficulty = 1;
         game.SetActive(true);
@@ -45,7 +42,6 @@ public class ScreenController : MonoBehaviour
     }
 
     public void StartHard() {
-        background.GetComponent<SpriteRenderer>().color = Color.white;
         menu.SetActive(false);
         ball.difficulty = 2;
         game.SetActive(true);
